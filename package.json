@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite --host 0.0.0.0 --port 62023",
     "build": "vue-tsc -b && vite build",
-    "preview": "vite preview --host 0.0.0.0 --port 62023"
+    "preview": "vite preview --host 0.0.0.0 --port 62023",
+    "test:smoke": "esbuild smoke-flags.mjs --bundle --platform=node --format=esm --external:pinia --external:vue --outfile=node_modules/.cache/smoke-flags.mjs && node node_modules/.cache/smoke-flags.mjs"
   },
   "dependencies": {
     "@vee-validate/zod": "^4.15.1",
